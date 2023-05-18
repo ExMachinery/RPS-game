@@ -23,6 +23,23 @@
 
         //playRound(). Compare two results. Somehow define who is a winner
         //Pseudocode
+        function playRound() {
+            let playerSelection = getPlayerChoice();
+            let computerSelection = getComputerChoice();
+            if (playerSelection === computerSelection) {
+                alert(`Draw! Your opponent also choose ${computerSelection}!`);
+            } else if ((playerSelection == "Rock" && computerSelection == "Scissors") || 
+            (playerSelection == "Paper" && computerSelection == "Rock") || (playerSelection == "Scissors" && computerSelection == "Paper")) {
+                alert(`You win! ${playerSelection} beats ${computerSelection}!`);
+                //save 1 point for player score
+            } else {
+                alert(`You loose! ${computerSelection} betas ${playerSelection}!`);
+                //save 1 point for computer score
+            }
+            console.log(playerSelection);
+            console.log(computerSelection);
+        }
+        playRound();
         //If (playerSelection === computerSelection)
             //print message 'Draw!'
         //Else if ((playerSelection == "Rock" && computerSelection == "Scissors") || 
@@ -35,7 +52,6 @@
 
 
                 //Prompt user for his choice and standardize it 
-                let playerSelection;
                 function getPlayerChoice() {
                     playerSelection = prompt('Rock, Paper or Scissors?', '');
                     let firstLetter = playerSelection.slice(0, 1);
@@ -47,18 +63,17 @@
                 }
 
                 //AI-Payer code. Get choice based on random number
-                // function getComputerChoice() {
-                //     let computerSelection;
-                //     let randomDigit = Math.random();
-                //     if (randomDigit > 0.66) {
-                //         computerSelection = "Rock";
-                //     } else if (randomDigit < 0.33) {
-                //         computerSelection = "Paper";
-                //     } else {
-                //         computerSelection = "Scissors";
-                //     }
-                //     return computerSelection;
-                // }
+                function getComputerChoice() {
+                    let randomDigit = Math.random();
+                    if (randomDigit > 0.66) {
+                        computerSelection = "Rock";
+                    } else if (randomDigit < 0.33) {
+                        computerSelection = "Paper";
+                    } else {
+                        computerSelection = "Scissors";
+                    }
+                    return computerSelection;
+                }
 
 
 
