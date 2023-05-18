@@ -16,12 +16,46 @@
 
 //Basic structure game()
     //repeat this 5 times. Remember every round results. Define a winner.
-        //One round function. Compare two results. Somehow define who is a winner
-            //player choose on of the strings (if statement)
-            //return playerSelection
-            //-------
-            //getComputerChoice(): computer choose a random string (How?)
-            //return computerSelection
+    //let playerScore = 0
+    //let computerScore = 0
+    //While (playerScore < 5 || computerScore < 5)
+
+
+        //playRound(). Compare two results. Somehow define who is a winner
+        //Pseudocode
+        //If (playerSelection === computerSelection)
+            //print message 'Draw!'
+        //Else if ((playerSelection == "Rock" && computerSelection == "Scissors") || 
+            // (playerSelection == "Paper" && computerSelection == "Rock") || (playerSelection == "Scissors" && computerSelection == "Paper"))
+            //print message `You win! ${playerSelection} beats ${computerSelection}!`
+            //save 1 victory point to playerScore variable
+        //Else 
+            //print message `You loose! ${computerSelection} beats ${playerSelection}!`
+            //save 1 victory point to computerScore variable
+
+
+                //player choose one of the strings (if statement)
+                //Pseudocode
+                //Get prompt() value from user and save it into playerSelection variable
+                //Use slice() to parse first letter and save it to firstLetter variable
+                //Use slice() to parse rest and save it to restLetter variable
+                //Use firstLetter.toUpperCase() for first letter
+                //Use restLetter.toLowerCase() for rest
+                //Combine both parts in one word and save it into playerSelection variable
+                //return playerSelection
+
+                //-------
+
+                //getComputerChoice(): computer choose a random string 
+                //Pseudocode
+                //Save a random number from 0 to 1 in randomDigit variable
+                //If randomDigit > 0,66
+                    //Save "Rock" to computerSelection variable
+                //Else if randomDigit < 0,33
+                    //Save "Paper" to computerSelection variable
+                //Else
+                    //Save "Scissors" to computerSelection variable
+                //return computerSelection
 
 
 
