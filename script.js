@@ -34,54 +34,32 @@
             //save 1 victory point to computerScore variable
 
 
-                //player choose one of the strings (if statement)
-                //Pseudocode
-                //Get prompt() value from user and save it into playerSelection variable
-                //Use slice() to parse first letter and save it to firstLetter variable
-                //Use slice() to parse rest and save it to restLetter variable
-                //Use firstLetter.toUpperCase() for first letter
-                //Use restLetter.toLowerCase() for rest
-                //Combine both parts in one word and save it into playerSelection variable
-                //return playerSelection
-
-
-
-                //Capitalize function
-                // function capitalize(string) {
-                //     let last = string.slice(1);
-                //     let first = string.slice(0, 1);
-                //     let firstUpper = first.toUpperCase();
-                //     let lastLower = last.toLowerCase();
-                //     result = (firstUpper + lastLower);
-                //     return result;
-                // }
-                //-------
-
-                //getComputerChoice(): computer choose a random string 
-                //Pseudocode
-                //Save a random number from 0 to 1 in randomDigit variable
-                function getComputerChoice() {
-                    let computerSelection;
-                    let randomDigit = Math.random();
-                    if (randomDigit > 0.66) {
-                        computerSelection = "Rock";
-                    } else if (randomDigit < 0.33) {
-                        computerSelection = "Paper";
-                    } else {
-                        computerSelection = "Scissors";
-                    }
-                    console.log(randomDigit);
-                    console.log(computerSelection);
-                    // return computerSelection;
+                //Prompt user for his choice and standardize it 
+                let playerSelection;
+                function getPlayerChoice() {
+                    playerSelection = prompt('Rock, Paper or Scissors?', '');
+                    let firstLetter = playerSelection.slice(0, 1);
+                    let restLetter = playerSelection.slice(1);
+                    let capitalFirst = firstLetter.toUpperCase();
+                    let lowerRest = restLetter.toLowerCase();
+                    playerSelection = (capitalFirst + lowerRest);
+                    return playerSelection;
                 }
-                getComputerChoice();
-                //If randomDigit > 0,66
-                    //Save "Rock" to computerSelection variable
-                //Else if randomDigit < 0,33
-                    //Save "Paper" to computerSelection variable
-                //Else
-                    //Save "Scissors" to computerSelection variable
-                //return computerSelection
+
+                //AI-Payer code. Get choice based on random number
+                // function getComputerChoice() {
+                //     let computerSelection;
+                //     let randomDigit = Math.random();
+                //     if (randomDigit > 0.66) {
+                //         computerSelection = "Rock";
+                //     } else if (randomDigit < 0.33) {
+                //         computerSelection = "Paper";
+                //     } else {
+                //         computerSelection = "Scissors";
+                //     }
+                //     return computerSelection;
+                // }
+
 
 
 
