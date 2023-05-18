@@ -16,13 +16,22 @@
 
 //Basic structure game()
     //repeat this 5 times. Remember every round results. Define a winner.
-    //let playerScore = 0
-    //let computerScore = 0
+    let playerScore = 0
+    let computerScore = 0
     //While (playerScore < 5 || computerScore < 5)
+    while (playerScore < 5 || computerScore < 5) {
+        if (playerScore === 5 && computerScore < playerScore) {
+            alert(`Congratulations! AI defeated!`);
+            break;
+        } else if (computerScore === 5 && computerScore > playerScore) {
+            alert(`He-he, better luck next time, pal!`);
+            break;
+        } else {
+            playRound()
+        }
+    }
 
-
-        //playRound(). Compare two results. Somehow define who is a winner
-        //Pseudocode
+        //Compare player choice to AI choice and decide who is the winner in this round
         function playRound() {
             let playerSelection = getPlayerChoice();
             let computerSelection = getComputerChoice();
@@ -30,26 +39,13 @@
                 alert(`Draw! Your opponent also choose ${computerSelection}!`);
             } else if ((playerSelection == "Rock" && computerSelection == "Scissors") || 
             (playerSelection == "Paper" && computerSelection == "Rock") || (playerSelection == "Scissors" && computerSelection == "Paper")) {
-                alert(`You win! ${playerSelection} beats ${computerSelection}!`);
-                //save 1 point for player score
+                playerScore = (playerScore + 1);
+                alert(`You win! ${playerSelection} beats ${computerSelection}! You: ${playerScore} AI: ${computerScore}`);
             } else {
-                alert(`You loose! ${computerSelection} betas ${playerSelection}!`);
-                //save 1 point for computer score
+                computerScore = (computerScore + 1);
+                alert(`You loose! ${computerSelection} beats ${playerSelection}! You: ${playerScore} AI: ${computerScore}`);
             }
-            console.log(playerSelection);
-            console.log(computerSelection);
         }
-        playRound();
-        //If (playerSelection === computerSelection)
-            //print message 'Draw!'
-        //Else if ((playerSelection == "Rock" && computerSelection == "Scissors") || 
-            // (playerSelection == "Paper" && computerSelection == "Rock") || (playerSelection == "Scissors" && computerSelection == "Paper"))
-            //print message `You win! ${playerSelection} beats ${computerSelection}!`
-            //save 1 victory point to playerScore variable
-        //Else 
-            //print message `You loose! ${computerSelection} beats ${playerSelection}!`
-            //save 1 victory point to computerScore variable
-
 
                 //Prompt user for his choice and standardize it 
                 function getPlayerChoice() {
