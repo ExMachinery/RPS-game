@@ -44,11 +44,37 @@
                 //Combine both parts in one word and save it into playerSelection variable
                 //return playerSelection
 
+
+
+                //Capitalize function
+                // function capitalize(string) {
+                //     let last = string.slice(1);
+                //     let first = string.slice(0, 1);
+                //     let firstUpper = first.toUpperCase();
+                //     let lastLower = last.toLowerCase();
+                //     result = (firstUpper + lastLower);
+                //     return result;
+                // }
                 //-------
 
                 //getComputerChoice(): computer choose a random string 
                 //Pseudocode
                 //Save a random number from 0 to 1 in randomDigit variable
+                function getComputerChoice() {
+                    let computerSelection;
+                    let randomDigit = Math.random();
+                    if (randomDigit > 0.66) {
+                        computerSelection = "Rock";
+                    } else if (randomDigit < 0.33) {
+                        computerSelection = "Paper";
+                    } else {
+                        computerSelection = "Scissors";
+                    }
+                    console.log(randomDigit);
+                    console.log(computerSelection);
+                    // return computerSelection;
+                }
+                getComputerChoice();
                 //If randomDigit > 0,66
                     //Save "Rock" to computerSelection variable
                 //Else if randomDigit < 0,33
